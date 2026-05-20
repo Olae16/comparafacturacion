@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colores de marca */
+  --color-primary:        #1e40af;
+  --color-primary-dark:   #1d4ed8;
+  --color-primary-light:  #eff6ff;
+  --color-secondary:      #16a34a;
+  --color-secondary-dark: #15803d;
+  --color-secondary-light:#f0fdf4;
+
+  /* Tipografía */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans:    "DM Sans", system-ui, -apple-system, sans-serif;
+}
+
+/* Variables CSS para poder cambiar el tema desde un solo sitio */
+:root {
+  --primary:      #1e40af;
+  --primary-dark: #1d4ed8;
+  --secondary:    #16a34a;
+  --bg:           #f8fafc;
+  --surface:      #ffffff;
+  --text:         #0f172a;
+  --text-muted:   #64748b;
+  --border:       #e2e8f0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.65;
+}

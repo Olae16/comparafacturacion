@@ -1,0 +1,76 @@
+---
+const navLinks = [
+  { href: "/",                  label: "Inicio" },
+  { href: "/mejores-programas", label: "Mejores programas" },
+  { href: "/comparativas",      label: "Comparativas" },
+  { href: "/guias",             label: "Guías" },
+];
+---
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+
+      <!-- Logo de texto: "Compara" en azul + "Facturación" en slate -->
+      <a href="/" class="flex items-baseline shrink-0" aria-label="Compara Facturación – Inicio">
+        <span class="font-display text-xl font-semibold text-primary">Compara</span>
+        <span class="font-display text-xl font-normal text-slate-600">Facturación</span>
+      </a>
+
+      <!-- Navegación escritorio -->
+      <nav class="hidden md:flex items-center gap-1" aria-label="Navegación principal">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="px-3 py-2 text-sm font-medium text-slate-600 hover:text-primary hover:bg-primary-light rounded-lg transition-colors duration-150"
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <!-- Botón hamburguesa (solo móvil) -->
+      <button
+        id="menu-toggle"
+        class="md:hidden flex items-center justify-center w-10 h-10 text-slate-600 hover:text-primary hover:bg-slate-100 rounded-lg transition-colors"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg id="icon-open" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="icon-close" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Menú móvil desplegable -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 py-2" role="navigation" aria-label="Navegación móvil">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="flex items-center px-2 py-3 text-sm font-medium text-slate-600 hover:text-primary hover:bg-primary-light rounded-lg transition-colors"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle   = document.getElementById("menu-toggle");
+  const menu     = document.getElementById("mobile-menu");
+  const iconOpen  = document.getElementById("icon-open");
+  const iconClose = document.getElementById("icon-close");
+
+  toggle?.addEventListener("click", () => {
+    const isHidden = menu?.classList.contains("hidden");
+    menu?.classList.toggle("hidden");
+    iconOpen?.classList.toggle("hidden");
+    iconClose?.classList.toggle("hidden");
+    toggle.setAttribute("aria-expanded", isHidden ? "true" : "false");
+  });
+</script>

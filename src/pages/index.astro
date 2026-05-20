@@ -1,17 +1,310 @@
 ---
+import Layout from "../layouts/Layout.astro";
 
+const topPrograms = [
+  {
+    name: "FacturaPro",
+    rating: "4.8",
+    summary: "La opción más completa para autónomos que quieren tranquilidad. Verifactu integrado desde el primer día, soporte en español y precios razonables.",
+    price: "12,90",
+    badge: "Mejor valorado",
+    badgeClass: "bg-primary-light text-primary",
+    tags: ["Verifactu", "App móvil", "Multi-empresa"],
+  },
+  {
+    name: "SimpliFactura",
+    rating: "4.6",
+    summary: "Simplicidad sin sacrificar potencia. Perfecta si empiezas o tienes un volumen de facturación moderado. Interfaz muy intuitiva.",
+    price: "7,90",
+    badge: "Mejor precio",
+    badgeClass: "bg-secondary-light text-secondary",
+    tags: ["Verifactu", "Plantillas", "Soporte email"],
+  },
+  {
+    name: "ContaFlex Pymes",
+    rating: "4.5",
+    summary: "La elección para pymes con necesidades contables avanzadas. Integra facturación, contabilidad y gestión de gastos en un solo lugar.",
+    price: "24,90",
+    badge: "Mejor para pymes",
+    badgeClass: "bg-amber-50 text-amber-700",
+    tags: ["Verifactu", "Contabilidad", "Multi-usuario"],
+  },
+];
+
+const trustPoints = [
+  {
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>`,
+    title: "Análisis independientes",
+    description: "No aceptamos dinero por mejorar posiciones. Cada programa se evalúa con los mismos criterios objetivos y sin presiones comerciales.",
+  },
+  {
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" /></svg>`,
+    title: "Actualizado mensualmente",
+    description: "Los precios, funcionalidades y condiciones cambian. Revisamos cada ficha cada mes para que siempre consultes información vigente.",
+  },
+  {
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>`,
+    title: "Para autónomos reales",
+    description: "Hablamos con autónomos y pymes, no solo con los fabricantes. Nuestra perspectiva viene del uso cotidiano, no de los folletos de marketing.",
+  },
+];
+
+const guides = [
+  {
+    tag: "Normativa",
+    tagClass: "bg-amber-50 text-amber-700",
+    title: "¿Qué es Verifactu y cómo te afecta como autónomo?",
+    excerpt: "Todo lo que necesitas saber sobre el nuevo sistema de verificación de facturas y qué programas ya están adaptados.",
+  },
+  {
+    tag: "Comparativas",
+    tagClass: "bg-primary-light text-primary",
+    title: "Los 8 mejores programas de facturación para autónomos en 2026",
+    excerpt: "Analizamos en profundidad las opciones más populares: precios reales, funcionalidades, soporte y nuestra valoración.",
+  },
+  {
+    tag: "Guías",
+    tagClass: "bg-secondary-light text-secondary",
+    title: "Cómo elegir el software de facturación para tu tipo de negocio",
+    excerpt: "Guía paso a paso para encontrar el programa que mejor se adapta a tus necesidades, sector y volumen de facturación.",
+  },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+  title="Encuentra el mejor software de facturación para tu negocio"
+  description="Compara los mejores programas de facturación para autónomos y pymes en España. Análisis independientes y guías actualizadas para Verifactu 2026."
+>
+
+  <!-- ═══════════════════════════════════════════════ HERO -->
+  <section class="relative overflow-hidden">
+    <!-- Fondo con degradado azul muy sutil -->
+    <div class="absolute inset-0 bg-gradient-to-b from-primary-light/60 to-transparent pointer-events-none"></div>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 md:pt-32 md:pb-36 text-center">
+
+      <!-- Badge superior -->
+      <div class="inline-flex items-center gap-2 bg-white border border-primary/20 text-primary text-xs font-semibold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-sm mb-8">
+        <span class="w-1.5 h-1.5 rounded-full bg-secondary inline-block"></span>
+        Actualizado para Verifactu 2026
+      </div>
+
+      <!-- Titular principal en Fraunces -->
+      <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight mb-6">
+        Encuentra el mejor<br />
+        software de facturación<br />
+        <em class="text-primary not-italic">para tu negocio</em>
+      </h1>
+
+      <!-- Subtítulo -->
+      <p class="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-10">
+        Comparamos los principales programas adaptados a la normativa Verifactu.
+        Sin sesgos, con datos reales y precios actualizados cada mes.
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row gap-3 justify-center mb-16">
+        <a
+          href="/mejores-programas"
+          class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors shadow-lg shadow-blue-200"
+        >
+          Ver los mejores programas
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+        <a
+          href="/comparativas"
+          class="inline-flex items-center justify-center px-7 py-3.5 bg-white text-slate-700 font-semibold rounded-xl border border-slate-200 hover:border-primary/40 hover:text-primary transition-colors"
+        >
+          Ver comparativas
+        </a>
+      </div>
+
+      <!-- Métricas de confianza rápidas -->
+      <div class="flex flex-col sm:flex-row gap-6 sm:gap-12 justify-center items-center text-sm text-slate-500">
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-secondary shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+          <span>24 programas analizados</span>
+        </div>
+        <div class="hidden sm:block w-px h-4 bg-slate-200"></div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-secondary shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+          <span>Actualización mensual</span>
+        </div>
+        <div class="hidden sm:block w-px h-4 bg-slate-200"></div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-secondary shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+          <span>Análisis independientes</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ TOP PROGRAMAS -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-2">Los más recomendados</p>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-slate-900">
+          Mejores programas de facturación
+        </h2>
+      </div>
+      <a href="/mejores-programas" class="text-sm font-medium text-primary hover:underline whitespace-nowrap shrink-0">
+        Ver todos →
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {topPrograms.map((program) => (
+        <article class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col hover:shadow-lg hover:border-primary/20 transition-all duration-200">
+
+          <!-- Cabecera de la tarjeta -->
+          <div class="flex items-start justify-between gap-3 mb-4">
+            <div>
+              <span class={`inline-block text-xs font-semibold px-2.5 py-1 rounded-full ${program.badgeClass} mb-2`}>
+                {program.badge}
+              </span>
+              <h3 class="font-display text-xl font-semibold text-slate-900">{program.name}</h3>
+            </div>
+            <div class="flex items-center gap-1 shrink-0 bg-amber-50 px-2 py-1 rounded-lg">
+              <svg class="w-3.5 h-3.5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <span class="text-xs font-bold text-amber-700">{program.rating}</span>
+            </div>
+          </div>
+
+          <!-- Resumen -->
+          <p class="text-sm text-slate-600 leading-relaxed mb-5 flex-1">{program.summary}</p>
+
+          <!-- Etiquetas de características -->
+          <div class="flex flex-wrap gap-1.5 mb-5">
+            {program.tags.map((tag) => (
+              <span class="text-xs bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md font-medium">
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <!-- Precio y CTA -->
+          <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+            <div>
+              <span class="text-xs text-slate-400">Desde</span>
+              <p class="font-display text-xl font-semibold text-slate-900">
+                {program.price} <span class="text-sm font-normal text-slate-500">€/mes</span>
+              </p>
+            </div>
+            <a
+              href="/mejores-programas"
+              class="text-sm font-semibold text-primary hover:text-primary-dark transition-colors flex items-center gap-1"
+            >
+              Ver análisis
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </a>
+          </div>
+
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ POR QUÉ CONFIAR -->
+  <section class="bg-white border-y border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="text-center mb-12">
+        <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-2">Nuestro método</p>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-slate-900">
+          Por qué puedes confiar en nosotros
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {trustPoints.map((point) => (
+          <div class="flex flex-col items-start gap-4">
+            <div class="w-12 h-12 bg-primary-light text-primary rounded-xl flex items-center justify-center shrink-0">
+              <Fragment set:html={point.icon} />
+            </div>
+            <div>
+              <h3 class="font-display text-lg font-semibold text-slate-900 mb-2">{point.title}</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">{point.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ GUÍAS RECIENTES -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-2">Aprende antes de decidir</p>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-slate-900">
+          Guías y artículos
+        </h2>
+      </div>
+      <a href="/guias" class="text-sm font-medium text-primary hover:underline whitespace-nowrap shrink-0">
+        Ver todas las guías →
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {guides.map((guide) => (
+        <article class="group bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-lg hover:border-primary/20 transition-all duration-200 cursor-pointer">
+          <span class={`inline-block text-xs font-semibold px-2.5 py-1 rounded-full ${guide.tagClass} mb-4`}>
+            {guide.tag}
+          </span>
+          <h3 class="font-display text-lg font-semibold text-slate-900 leading-snug mb-3 group-hover:text-primary transition-colors">
+            {guide.title}
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-5">{guide.excerpt}</p>
+          <span class="text-sm font-semibold text-primary flex items-center gap-1">
+            Leer artículo
+            <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </span>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ CTA FINAL -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+    <div class="bg-primary rounded-3xl px-8 py-14 md:py-16 text-center relative overflow-hidden">
+      <!-- Decoración de fondo sutil -->
+      <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full -translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+
+      <div class="relative">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+          ¿No sabes por dónde empezar?
+        </h2>
+        <p class="text-blue-200 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+          Nuestra comparativa principal te ayuda a elegir en menos de 5 minutos,
+          según tu perfil y necesidades reales.
+        </p>
+        <a
+          href="/comparativas"
+          class="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-primary font-semibold rounded-xl hover:bg-blue-50 transition-colors shadow-lg"
+        >
+          Empezar la comparativa
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
