@@ -1,0 +1,443 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import productos from "../../data/productos.json";
+
+export function getStaticPaths() {
+  return productos.map((p) => ({
+    params: { slug: p.slug },
+    props: { producto: p },
+  }));
+}
+
+const { producto: p } = Astro.props;
+
+const cumplimientoNormativo = [
+  { key: "verifactu",    label: "Verifactu" },
+  { key: "ticketbai",   label: "TicketBAI" },
+  { key: "facturaeFace", label: "Factura-e / FACe" },
+];
+
+const funciones = [
+  { key: "conciliacionBancaria", label: "Conciliación bancaria" },
+  { key: "ocrGastos",           label: "OCR de gastos" },
+  { key: "crm",                 label: "CRM" },
+  { key: "gestionProyectos",    label: "Gestión de proyectos" },
+  { key: "inventario",          label: "Inventario" },
+  { key: "contabilidadCompleta", label: "Contabilidad completa" },
+  { key: "multiusuario",        label: "Multi-usuario" },
+  { key: "multiempresa",        label: "Multi-empresa" },
+];
+
+const appsIntegraciones = [
+  { key: "appIos",               label: "App iOS" },
+  { key: "appAndroid",           label: "App Android" },
+  { key: "integracionShopify",   label: "Shopify" },
+  { key: "integracionWoocommerce", label: "WooCommerce" },
+  { key: "integracionStripe",    label: "Stripe" },
+];
+
+const pageTitle       = `${p.nombre}: precios, opiniones y análisis 2026`;
+const pageDescription = `Análisis completo de ${p.nombre}. Planes desde ${p.precios.desde}€/mes, ${p.precios.pruebaGratisDias} días de prueba gratis. Pros, contras, características y valoración honesta para ${p.targetPrincipal.toLowerCase()}.`;
+
+const cara = p.caracteristicas as Record<string, boolean>;
+
+const updateDate = new Date().toLocaleDateString("es-ES", { month: "long", year: "numeric" });
+
+const planGridClass =
+  p.precios.planes.length === 2 ? "grid-cols-1 sm:grid-cols-2" :
+  p.precios.planes.length === 3 ? "grid-cols-1 sm:grid-cols-3" :
+  p.precios.planes.length === 4 ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" :
+  "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+
+  <!-- ══════════════════════════════════════════ HERO -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-[--color-primary-light]/70 to-transparent pointer-events-none"></div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14 md:pt-24 md:pb-20">
+
+      <!-- Miga de pan -->
+      <nav class="text-xs text-slate-500 mb-6 flex items-center gap-1.5">
+        <a href="/" class="hover:text-primary transition-colors">Inicio</a>
+        <span>›</span>
+        <a href="/programa" class="hover:text-primary transition-colors">Programas</a>
+        <span>›</span>
+        <span class="text-slate-700 font-medium">{p.nombre}</span>
+      </nav>
+
+      <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
+
+        <!-- Nombre, badge, puntuación, resumen -->
+        <div class="flex-1">
+          <div class="flex flex-wrap items-center gap-2 mb-3">
+            <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-[--color-primary-light] text-primary border border-primary/20">
+              {p.badge}
+            </span>
+            <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 text-slate-600">
+              Desde {p.precios.desde}€/mes
+            </span>
+          </div>
+
+          <h1 class="font-display text-4xl sm:text-5xl font-bold text-slate-900 leading-tight mb-3">
+            {p.nombreCompleto}
+          </h1>
+
+          <!-- Puntuación + fecha de actualización -->
+          <div class="flex flex-wrap items-center gap-3 mb-5">
+            <div class="flex items-center gap-1.5 bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-xl">
+              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <span class="text-sm font-bold text-amber-700">{p.puntuacion}</span>
+              <span class="text-xs text-amber-600">/10</span>
+            </div>
+            <span class="text-sm text-slate-500">· Fundado en {p.fundacion} · {p.sede}</span>
+            <span class="flex items-center gap-1 text-xs text-slate-400 border border-slate-200 bg-white px-2.5 py-1 rounded-full">
+              <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              Análisis actualizado en {updateDate}
+            </span>
+          </div>
+
+          <p class="text-lg text-slate-700 leading-relaxed max-w-xl">
+            {p.resumenCorto}
+          </p>
+        </div>
+
+        <!-- CTA principal -->
+        <div class="flex flex-col items-start md:items-end gap-3 shrink-0">
+          <a
+            href={p.afiliacion.linkAfiliado}
+            target="_blank"
+            rel="sponsored nofollow"
+            class="inline-flex items-center justify-center gap-2 px-7 py-4 bg-secondary text-white font-semibold rounded-xl hover:bg-[--color-secondary-dark] transition-colors shadow-lg shadow-green-200 text-base whitespace-nowrap"
+          >
+            Probar {p.nombre} gratis
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+          <p class="text-xs text-slate-500 text-right">
+            {p.precios.pruebaGratisDias} días gratis · Sin tarjeta
+          </p>
+          {p.afiliacion.tienePrograma && (
+            <p class="text-xs text-slate-400 text-right">Enlace de afiliado · sin coste adicional para ti</p>
+          )}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════ DATOS RÁPIDOS -->
+  <section class="border-y border-slate-200 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+
+        <div class="flex flex-col gap-1">
+          <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Precio desde</span>
+          <span class="font-display text-2xl font-bold text-slate-900">{p.precios.desde}€</span>
+          <span class="text-xs text-slate-500">/{p.precios.periodo} · {p.precios.notaPrecio}</span>
+        </div>
+
+        <div class="flex flex-col gap-1">
+          <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Prueba gratis</span>
+          <span class="font-display text-2xl font-bold text-secondary">{p.precios.pruebaGratisDias} días</span>
+          <span class="text-xs text-slate-500">{p.precios.pruebaSinTarjeta ? "Sin tarjeta" : "Con tarjeta"}</span>
+        </div>
+
+        <div class="flex flex-col gap-1">
+          <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Ideal para</span>
+          <span class="text-sm font-semibold text-slate-800 leading-snug">{p.targetPrincipal}</span>
+        </div>
+
+        <div class="flex flex-col gap-1">
+          <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Sede</span>
+          <span class="text-sm font-semibold text-slate-800">{p.sede}</span>
+          <span class="text-xs text-slate-500">{p.empresa}</span>
+        </div>
+
+        <div class="flex flex-col gap-1">
+          <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Fundación</span>
+          <span class="font-display text-2xl font-bold text-slate-900">{p.fundacion}</span>
+          <span class="text-xs text-slate-500">Más de {new Date().getFullYear() - p.fundacion} años en el mercado</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════ CONTENIDO PRINCIPAL -->
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14 flex flex-col gap-14">
+
+    <!-- ── PLANES Y PRECIOS -->
+    <section>
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-slate-900 mb-2">Planes y precios</h2>
+      <p class="text-slate-500 text-sm mb-6">{p.precios.notaPrecio}</p>
+
+      <div class={`grid gap-4 ${planGridClass}`}>
+        {p.precios.planes.map((plan, i) => (
+          <div class={`rounded-2xl border p-5 flex flex-col gap-3 ${i === 1 ? "border-primary/40 bg-[--color-primary-light]/30 ring-1 ring-primary/20" : "border-slate-200 bg-white"}`}>
+            {i === 1 && (
+              <span class="text-xs font-semibold text-primary uppercase tracking-wider">Más popular</span>
+            )}
+            <div>
+              <h3 class="font-display text-lg font-semibold text-slate-900">{plan.nombre}</h3>
+              <div class="flex items-baseline gap-1 mt-1">
+                <span class="font-display text-3xl font-bold text-slate-900">{plan.precio}€</span>
+                <span class="text-sm text-slate-500">/mes</span>
+              </div>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed flex-1">{plan.descripcion}</p>
+            <a
+              href={p.afiliacion.linkAfiliado}
+              target="_blank"
+              rel="sponsored nofollow"
+              class={`text-center text-sm font-semibold py-2.5 rounded-xl transition-colors ${i === 1 ? "bg-primary text-white hover:bg-[--color-primary-dark]" : "bg-slate-100 text-slate-700 hover:bg-slate-200"}`}
+            >
+              Empezar con {plan.nombre}
+            </a>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ── CARACTERÍSTICAS -->
+    <section>
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-slate-900 mb-8">Características</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Grupo 1: Cumplimiento normativo -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-amber-50 rounded-lg flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+              </svg>
+            </div>
+            <h3 class="font-display text-base font-semibold text-slate-900">Cumplimiento normativo</h3>
+          </div>
+          <ul class="flex flex-col gap-2.5">
+            {cumplimientoNormativo.map(({ key, label }) => (
+              <li class="flex items-center gap-2.5 text-sm">
+                {cara[key] ? (
+                  <span class="w-5 h-5 rounded-full bg-[--color-secondary-light] flex items-center justify-center shrink-0">
+                    <svg class="w-3 h-3 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                  </span>
+                ) : (
+                  <span class="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center shrink-0">
+                    <svg class="w-3 h-3 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                  </span>
+                )}
+                <span class={cara[key] ? "text-slate-800" : "text-slate-400"}>{label}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Grupo 2: Funciones -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-[--color-primary-light] rounded-lg flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/>
+              </svg>
+            </div>
+            <h3 class="font-display text-base font-semibold text-slate-900">Funciones</h3>
+          </div>
+          <ul class="flex flex-col gap-2.5">
+            {funciones.map(({ key, label }) => (
+              <li class="flex items-center gap-2.5 text-sm">
+                {cara[key] ? (
+                  <span class="w-5 h-5 rounded-full bg-[--color-secondary-light] flex items-center justify-center shrink-0">
+                    <svg class="w-3 h-3 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                  </span>
+                ) : (
+                  <span class="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center shrink-0">
+                    <svg class="w-3 h-3 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                  </span>
+                )}
+                <span class={cara[key] ? "text-slate-800" : "text-slate-400"}>{label}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Grupo 3: Apps e integraciones -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-[--color-secondary-light] rounded-lg flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18h3"/>
+              </svg>
+            </div>
+            <h3 class="font-display text-base font-semibold text-slate-900">Apps e integraciones</h3>
+          </div>
+          <ul class="flex flex-col gap-2.5">
+            {appsIntegraciones.map(({ key, label }) => (
+              <li class="flex items-center gap-2.5 text-sm">
+                {cara[key] ? (
+                  <span class="w-5 h-5 rounded-full bg-[--color-secondary-light] flex items-center justify-center shrink-0">
+                    <svg class="w-3 h-3 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                  </span>
+                ) : (
+                  <span class="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center shrink-0">
+                    <svg class="w-3 h-3 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                  </span>
+                )}
+                <span class={cara[key] ? "text-slate-800" : "text-slate-400"}>{label}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── PROS Y CONTRAS -->
+    <section>
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-slate-900 mb-6">Pros y contras</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="bg-[--color-secondary-light] rounded-2xl border border-secondary/20 p-6">
+          <h3 class="font-display text-lg font-semibold text-secondary mb-4 flex items-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/>
+            </svg>
+            Lo que destaca
+          </h3>
+          <ul class="flex flex-col gap-3">
+            {p.pros.map((pro) => (
+              <li class="flex items-start gap-3 text-sm text-slate-700">
+                <svg class="w-4 h-4 text-secondary shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                {pro}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="bg-red-50 rounded-2xl border border-red-200/60 p-6">
+          <h3 class="font-display text-lg font-semibold text-red-700 mb-4 flex items-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+            </svg>
+            Lo que puede mejorar
+          </h3>
+          <ul class="flex flex-col gap-3">
+            {p.contras.map((contra) => (
+              <li class="flex items-start gap-3 text-sm text-slate-700">
+                <svg class="w-4 h-4 text-red-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/>
+                </svg>
+                {contra}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── IDEAL PARA / NO RECOMENDADO SI -->
+    <section>
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-slate-900 mb-6">¿Es {p.nombre} para ti?</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 flex gap-4">
+          <div class="w-10 h-10 bg-[--color-secondary-light] rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+            <svg class="w-5 h-5 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-display text-base font-semibold text-slate-900 mb-2">Ideal para</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">{p.idealPara}</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 flex gap-4">
+          <div class="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+            <svg class="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-display text-base font-semibold text-slate-900 mb-2">No recomendado si…</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">{p.noRecomendadoSi}</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── MODELOS FISCALES -->
+    <section>
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-slate-900 mb-2">Modelos fiscales que soporta</h2>
+      <p class="text-slate-500 text-sm mb-5">Presentación y/o cálculo de los siguientes modelos de la Agencia Tributaria:</p>
+      <div class="flex flex-wrap gap-2">
+        {p.modelosFiscales.map((modelo) => (
+          <span class="inline-flex items-center gap-1.5 text-sm font-semibold px-4 py-2 bg-white border border-primary/20 text-primary rounded-xl shadow-sm">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            Modelo {modelo}
+          </span>
+        ))}
+      </div>
+    </section>
+
+    <!-- ── CTA FINAL -->
+    <section>
+      <div class="bg-primary rounded-3xl px-8 py-12 md:py-14 text-center relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full -translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+
+        <div class="relative">
+          <p class="text-blue-200 text-xs font-semibold uppercase tracking-widest mb-3">{p.precios.pruebaGratisDias} días gratis · Sin tarjeta</p>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+            ¿Listo para probar {p.nombre}?
+          </h2>
+          <p class="text-blue-200 text-lg mb-8 max-w-lg mx-auto leading-relaxed">
+            {p.resumenCorto}
+          </p>
+          <a
+            href={p.afiliacion.linkAfiliado}
+            target="_blank"
+            rel="sponsored nofollow"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary font-semibold rounded-xl hover:bg-blue-50 transition-colors shadow-lg text-base"
+          >
+            Probar {p.nombre} {p.precios.pruebaGratisDias} días gratis
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+          {p.afiliacion.tienePrograma && (
+            <p class="text-blue-300 text-xs mt-4">Enlace de afiliado — sin coste adicional para ti</p>
+          )}
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+</Layout>

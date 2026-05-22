@@ -1,0 +1,284 @@
+[
+  {
+    "slug": "quipu",
+    "nombre": "Quipu",
+    "nombreCompleto": "TeamSystem Quipu",
+    "web": "https://getquipu.com",
+    "logo": "/logos/quipu.png",
+    "fundacion": 2013,
+    "empresa": "TeamSystem (adquirida en 2021)",
+    "sede": "Barcelona",
+    "puntuacion": 9.0,
+    "targetPrincipal": "Autónomos, freelancers y pymes pequeñas",
+    "resumenCorto": "El software de facturación más popular entre autónomos en España. Destaca por su facilidad de uso y la automatización de modelos fiscales.",
+    "badge": "Mejor para autónomos",
+    "precios": {
+      "tieneePlanGratis": false,
+      "desde": 17.0,
+      "moneda": "EUR",
+      "periodo": "mes",
+      "notaPrecio": "Pago anual, IVA no incluido",
+      "pruebaGratisDias": 15,
+      "pruebaSinTarjeta": true,
+      "planes": [
+        {
+          "nombre": "Starter",
+          "precio": 17.0,
+          "descripcion": "Para negocios que empiezan: facturas y presupuestos ilimitados, 30 escaneos/mes, previsión de impuestos, app móvil"
+        },
+        {
+          "nombre": "Solution",
+          "precio": 30.0,
+          "descripcion": "Todo lo de Starter + 250 escaneos/mes, conciliación bancaria, pedidos y albaranes, integraciones y API"
+        },
+        {
+          "nombre": "Premium",
+          "precio": 59.0,
+          "descripcion": "Funciones avanzadas, previsión de tesorería, máximo nivel de automatización"
+        }
+      ]
+    },
+    "caracteristicas": {
+      "verifactu": true,
+      "ticketbai": true,
+      "facturaeFace": true,
+      "conciliacionBancaria": true,
+      "ocrGastos": true,
+      "multimoneda": true,
+      "appMovil": true,
+      "appIos": true,
+      "appAndroid": true,
+      "integracionShopify": true,
+      "integracionWoocommerce": true,
+      "integracionStripe": true,
+      "modelosImpuestos": true,
+      "presentaImpuestos": true,
+      "crm": true,
+      "gestionProyectos": false,
+      "inventario": false,
+      "contabilidadCompleta": true,
+      "multiusuario": true,
+      "multiempresa": true,
+      "accesoGestoria": true
+    },
+    "modelosFiscales": [
+      "303",
+      "130",
+      "111",
+      "115",
+      "349",
+      "180",
+      "190",
+      "347",
+      "390"
+    ],
+    "pros": [
+      "Curva de aprendizaje mínima: emites tu primera factura en minutos",
+      "OCR de gastos de los mejores del mercado",
+      "Automatiza el cálculo de todos los modelos fiscales trimestrales y anuales"
+    ],
+    "contras": [
+      "No incluye gestión de proyectos ni inventario",
+      "El plan de entrada es algo más caro que algunos competidores",
+      "Soporte puede ser lento en horas punta"
+    ],
+    "idealPara": "Autónomos y freelancers que quieren facturación y cumplimiento fiscal sin complicaciones",
+    "noRecomendadoSi": "Necesitas gestión de inventario, proyectos o eres una pyme con un equipo grande",
+    "afiliacion": {
+      "tienePrograma": true,
+      "plataforma": "Rewardful",
+      "comision": "30% recurrente hasta 12 meses",
+      "linkAfiliado": "https://getquipu.com/?via=comparador"
+    }
+  },
+  {
+    "slug": "billin",
+    "nombre": "Billin",
+    "nombreCompleto": "TeamSystem Facturas Billin",
+    "web": "https://www.billin.net",
+    "logo": "/logos/billin.png",
+    "fundacion": 2015,
+    "empresa": "TeamSystem (adquirida en 2021)",
+    "sede": "Madrid",
+    "puntuacion": 8.0,
+    "targetPrincipal": "Autónomos, freelancers y microempresas",
+    "resumenCorto": "Facturación online sencilla y económica, pensada para que emitir una factura lleve el menor tiempo posible. Más de 180.000 usuarios.",
+    "badge": "Mejor precio",
+    "precios": {
+      "tieneePlanGratis": false,
+      "desde": 6.6,
+      "moneda": "EUR",
+      "periodo": "mes",
+      "notaPrecio": "Pago anual, IVA no incluido",
+      "pruebaGratisDias": 30,
+      "pruebaSinTarjeta": true,
+      "planes": [
+        {
+          "nombre": "Básico",
+          "precio": 6.6,
+          "descripcion": "Máximo 5 clientes y 10 productos, 1 usuario, 5 escaneos, facturas y presupuestos ilimitados"
+        },
+        {
+          "nombre": "Pro",
+          "precio": 12.5,
+          "descripcion": "Hasta 50 clientes, 3 usuarios, 50 escaneos/mes, facturas recurrentes automáticas"
+        },
+        {
+          "nombre": "Ilimitado",
+          "precio": 20.0,
+          "descripcion": "Clientes y productos ilimitados, integración con Shopify"
+        },
+        {
+          "nombre": "Ilimitado Plus",
+          "precio": 83.3,
+          "descripcion": "Máximas funciones y volumen para microempresas con más necesidades"
+        }
+      ]
+    },
+    "caracteristicas": {
+      "verifactu": true,
+      "ticketbai": true,
+      "facturaeFace": true,
+      "conciliacionBancaria": true,
+      "ocrGastos": true,
+      "multimoneda": false,
+      "appMovil": true,
+      "appIos": true,
+      "appAndroid": true,
+      "integracionShopify": true,
+      "integracionWoocommerce": false,
+      "integracionStripe": true,
+      "modelosImpuestos": true,
+      "presentaImpuestos": false,
+      "crm": false,
+      "gestionProyectos": false,
+      "inventario": false,
+      "contabilidadCompleta": false,
+      "multiusuario": true,
+      "multiempresa": true,
+      "accesoGestoria": true
+    },
+    "modelosFiscales": [
+      "303",
+      "130",
+      "111"
+    ],
+    "pros": [
+      "Muy sencillo: cualquier autónomo lo usa desde el primer día",
+      "Seguimiento de facturas (sabes si el cliente la ha recibido, abierto o pagado)",
+      "Envío de facturas por WhatsApp y email, acceso gratuito para el gestor"
+    ],
+    "contras": [
+      "El plan básico limita a 5 clientes y 10 productos, muchos necesitan subir a Pro",
+      "Sin contabilidad avanzada, proyectos ni inventario",
+      "Integración con Shopify solo en el plan Ilimitado"
+    ],
+    "idealPara": "Autónomos que facturan servicios y quieren cumplir la normativa pagando lo mínimo",
+    "noRecomendadoSi": "Eres una pyme con equipo, inventario o varias líneas de negocio",
+    "afiliacion": {
+      "tienePrograma": true,
+      "plataforma": "Referral Rock",
+      "comision": "Hasta 72€ por cliente (pago único)",
+      "linkAfiliado": "PENDIENTE_INSERTAR_LINK_BILLIN"
+    }
+  },
+  {
+    "slug": "holded",
+    "nombre": "Holded",
+    "nombreCompleto": "Holded",
+    "web": "https://www.holded.com",
+    "logo": "/logos/holded.png",
+    "fundacion": 2016,
+    "empresa": "Holded Technologies (grupo Visma)",
+    "sede": "Barcelona",
+    "puntuacion": 9.0,
+    "targetPrincipal": "Pymes, asesorías y ecommerce",
+    "resumenCorto": "El ERP en la nube más completo del mercado español. Une facturación, contabilidad, CRM, inventario, proyectos y RRHH en una sola plataforma. Más de 80.000 empresas.",
+    "badge": "Mejor para pymes",
+    "precios": {
+      "tieneePlanGratis": false,
+      "desde": 7.5,
+      "moneda": "EUR",
+      "periodo": "mes",
+      "notaPrecio": "Pago anual, IVA no incluido. 50% de descuento los primeros 3 meses",
+      "pruebaGratisDias": 14,
+      "pruebaSinTarjeta": true,
+      "planes": [
+        {
+          "nombre": "Plus",
+          "precio": 7.5,
+          "descripcion": "1 usuario + gestor, hasta 500 facturas/año, facturación y contabilidad básica"
+        },
+        {
+          "nombre": "Básico",
+          "precio": 14.0,
+          "descripcion": "Más control financiero para negocios en marcha"
+        },
+        {
+          "nombre": "Estándar",
+          "precio": 29.0,
+          "descripcion": "Añade CRM, proyectos e inventario, contabilidad con conciliación"
+        },
+        {
+          "nombre": "Avanzado",
+          "precio": 59.0,
+          "descripcion": "Funciones avanzadas, soporte prioritario"
+        },
+        {
+          "nombre": "Premium",
+          "precio": 99.5,
+          "descripcion": "15 usuarios, facturas ilimitadas, gestor de cuenta dedicado"
+        }
+      ]
+    },
+    "caracteristicas": {
+      "verifactu": true,
+      "ticketbai": true,
+      "facturaeFace": true,
+      "conciliacionBancaria": true,
+      "ocrGastos": true,
+      "multimoneda": true,
+      "appMovil": true,
+      "appIos": true,
+      "appAndroid": true,
+      "integracionShopify": true,
+      "integracionWoocommerce": true,
+      "integracionStripe": true,
+      "modelosImpuestos": true,
+      "presentaImpuestos": true,
+      "crm": true,
+      "gestionProyectos": true,
+      "inventario": true,
+      "contabilidadCompleta": true,
+      "multiusuario": true,
+      "multiempresa": true,
+      "accesoGestoria": true
+    },
+    "modelosFiscales": [
+      "303",
+      "130",
+      "111",
+      "115",
+      "349",
+      "390"
+    ],
+    "pros": [
+      "ERP completo: facturación, contabilidad, CRM, inventario y proyectos en un solo sitio",
+      "Integración nativa con el SII de Hacienda, sin plugins externos",
+      "Más de 50 integraciones (Stripe, Shopify, WooCommerce, Amazon...)"
+    ],
+    "contras": [
+      "El precio del plan de entrada sube tras los primeros 3 meses",
+      "Algunos módulos y automatizaciones (como el 303) tienen coste extra",
+      "Mayor curva de aprendizaje al ser un ERP completo"
+    ],
+    "idealPara": "Pymes en crecimiento que necesitan facturación, contabilidad, CRM y proyectos en una sola herramienta",
+    "noRecomendadoSi": "Eres autónomo y solo necesitas emitir unas pocas facturas al mes",
+    "afiliacion": {
+      "tienePrograma": false,
+      "plataforma": "Sin programa de afiliación público (candidato a acuerdo manual)",
+      "comision": "-",
+      "linkAfiliado": "https://www.holded.com"
+    }
+  }
+]
