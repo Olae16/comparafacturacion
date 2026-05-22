@@ -36,8 +36,11 @@ const appsIntegraciones = [
   { key: "integracionStripe",    label: "Stripe" },
 ];
 
+const currencySymbol = p.precios.moneda === "USD" ? "$" : "€";
+const precioDesdeLabel = p.precios.desde === 0 ? "Gratis" : `${p.precios.desde}${currencySymbol}`;
+
 const pageTitle       = `${p.nombre}: precios, opiniones y análisis 2026`;
-const pageDescription = `Análisis completo de ${p.nombre}. Planes desde ${p.precios.desde}€/mes, ${p.precios.pruebaGratisDias} días de prueba gratis. Pros, contras, características y valoración honesta para ${p.targetPrincipal.toLowerCase()}.`;
+const pageDescription = `Análisis completo de ${p.nombre}. Planes desde ${p.precios.desde === 0 ? "gratis" : `${p.precios.desde}${currencySymbol}/mes`}, ${p.precios.pruebaGratisDias} días de prueba gratis. Pros, contras, características y valoración honesta para ${p.targetPrincipal.toLowerCase()}.`;
 
 const cara = p.caracteristicas as Record<string, boolean>;
 
@@ -76,7 +79,7 @@ const planGridClass =
               {p.badge}
             </span>
             <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 text-slate-600">
-              Desde {p.precios.desde}€/mes
+              Desde {precioDesdeLabel}{p.precios.desde > 0 ? `/${p.precios.periodo}` : ""}
             </span>
           </div>
 
@@ -139,8 +142,8 @@ const planGridClass =
 
         <div class="flex flex-col gap-1">
           <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Precio desde</span>
-          <span class="font-display text-2xl font-bold text-slate-900">{p.precios.desde}€</span>
-          <span class="text-xs text-slate-500">/{p.precios.periodo} · {p.precios.notaPrecio}</span>
+          <span class="font-display text-2xl font-bold text-slate-900">{precioDesdeLabel}</span>
+          <span class="text-xs text-slate-500">{p.precios.desde > 0 ? `/${p.precios.periodo} · ` : ""}{p.precios.notaPrecio}</span>
         </div>
 
         <div class="flex flex-col gap-1">
@@ -187,8 +190,8 @@ const planGridClass =
             <div>
               <h3 class="font-display text-lg font-semibold text-slate-900">{plan.nombre}</h3>
               <div class="flex items-baseline gap-1 mt-1">
-                <span class="font-display text-3xl font-bold text-slate-900">{plan.precio}€</span>
-                <span class="text-sm text-slate-500">/mes</span>
+                <span class="font-display text-3xl font-bold text-slate-900">{plan.precio === 0 ? "Gratis" : `${plan.precio}${currencySymbol}`}</span>
+                {plan.precio > 0 && <span class="text-sm text-slate-500">/mes</span>}
               </div>
             </div>
             <p class="text-sm text-slate-600 leading-relaxed flex-1">{plan.descripcion}</p>
@@ -391,6 +394,7 @@ const planGridClass =
     </section>
 
     <!-- ── MODELOS FISCALES -->
+    {p.modelosFiscales.length > 0 ? (
     <section>
       <h2 class="font-display text-2xl md:text-3xl font-bold text-slate-900 mb-2">Modelos fiscales que soporta</h2>
       <p class="text-slate-500 text-sm mb-5">Presentación y/o cálculo de los siguientes modelos de la Agencia Tributaria:</p>
@@ -405,6 +409,17 @@ const planGridClass =
         ))}
       </div>
     </section>
+    ) : (
+    <section>
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-slate-900 mb-2">Modelos fiscales</h2>
+      <div class="flex items-start gap-3 bg-amber-50 border border-amber-200 rounded-2xl p-5 text-sm text-amber-800">
+        <svg class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/>
+        </svg>
+        <p>{p.nombre} <strong>no genera ni presenta los modelos fiscales españoles de forma nativa</strong> (303, 130, 111…). Si necesitas cumplir con Hacienda en España, consulta su documentación o usa un complemento específico.</p>
+      </div>
+    </section>
+    )}
 
     <!-- ── CTA FINAL -->
     <section>

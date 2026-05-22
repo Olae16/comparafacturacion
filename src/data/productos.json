@@ -280,5 +280,615 @@
       "comision": "-",
       "linkAfiliado": "https://www.holded.com"
     }
+  },
+  {
+    "slug": "sage",
+    "nombre": "Sage",
+    "nombreCompleto": "Sage 50 / Sage Contabilidad",
+    "web": "https://www.sage.com/es-es/",
+    "logo": "/logos/sage.png",
+    "fundacion": 1981,
+    "empresa": "The Sage Group plc (Reino Unido)",
+    "sede": "Newcastle (Reino Unido) · Sage España en Madrid",
+    "puntuacion": 8.0,
+    "targetPrincipal": "Pymes y empresas con necesidades contables avanzadas",
+    "resumenCorto": "Una de las marcas de software de gestión más veteranas del mundo. Sage 50 combina facturación, contabilidad y gestión comercial con la solidez de un referente del sector.",
+    "badge": "Marca consolidada",
+    "precios": {
+      "tieneePlanGratis": false,
+      "desde": 45.0,
+      "moneda": "EUR",
+      "periodo": "mes",
+      "notaPrecio": "Sage 50: Essential, Standard y Premium. Precios orientativos, varían según módulos",
+      "pruebaGratisDias": 30,
+      "pruebaSinTarjeta": true,
+      "planes": [
+        {
+          "nombre": "Essential",
+          "precio": 45.0,
+          "descripcion": "Facturación y contabilidad para pequeños negocios"
+        },
+        {
+          "nombre": "Standard",
+          "precio": 90.0,
+          "descripcion": "Gestión comercial integrada, control de stock y más usuarios"
+        },
+        {
+          "nombre": "Premium",
+          "precio": 160.0,
+          "descripcion": "Funciones avanzadas para empresas con mayor volumen"
+        }
+      ]
+    },
+    "caracteristicas": {
+      "verifactu": true,
+      "ticketbai": true,
+      "facturaeFace": true,
+      "conciliacionBancaria": true,
+      "ocrGastos": true,
+      "multimoneda": true,
+      "appMovil": true,
+      "appIos": true,
+      "appAndroid": true,
+      "integracionShopify": false,
+      "integracionWoocommerce": false,
+      "integracionStripe": false,
+      "modelosImpuestos": true,
+      "presentaImpuestos": true,
+      "crm": false,
+      "gestionProyectos": false,
+      "inventario": true,
+      "contabilidadCompleta": true,
+      "multiusuario": true,
+      "multiempresa": true,
+      "accesoGestoria": true
+    },
+    "modelosFiscales": [
+      "303",
+      "130",
+      "111",
+      "115",
+      "349",
+      "390",
+      "347"
+    ],
+    "pros": [
+      "Marca con más de 40 años de trayectoria y máxima fiabilidad",
+      "Gestión integrada de ventas, compras, stock y contabilidad",
+      "Soporte técnico profesional y red de distribuidores en España"
+    ],
+    "contras": [
+      "Más caro que las soluciones pensadas solo para autónomos",
+      "Interfaz menos moderna que competidores nativos en la nube",
+      "Curva de aprendizaje mayor; orientado a quien ya lleva contabilidad formal"
+    ],
+    "idealPara": "Pymes y empresas que necesitan contabilidad y gestión comercial robustas con el respaldo de una marca consolidada",
+    "noRecomendadoSi": "Eres autónomo y solo quieres emitir facturas de forma sencilla y económica",
+    "afiliacion": {
+      "tienePrograma": true,
+      "plataforma": "Impact (Optimus Performance Marketing)",
+      "comision": "5£ por registro a prueba, 10£ por suscripción contratada",
+      "linkAfiliado": "PENDIENTE_INSERTAR_LINK_SAGE"
+    }
+  },
+  {
+    "slug": "anfix",
+    "nombre": "Anfix",
+    "nombreCompleto": "Anfix",
+    "web": "https://www.anfix.com",
+    "logo": "/logos/anfix.png",
+    "fundacion": 2010,
+    "empresa": "Anfix Software S.L.",
+    "sede": "Valladolid",
+    "puntuacion": 8.0,
+    "targetPrincipal": "Autónomos, pymes y asesorías",
+    "resumenCorto": "ERP de contabilidad y facturación en la nube, muy fuerte en automatización contable y en la relación entre el negocio y su gestor. Más de 15.000 empresas lo usan.",
+    "badge": "Mejor automatización contable",
+    "precios": {
+      "tieneePlanGratis": false,
+      "desde": 4.99,
+      "moneda": "EUR",
+      "periodo": "mes",
+      "notaPrecio": "Pago anual. Cinco planes hasta ~41,66€/mes. Módulos Stock y Proyectos opcionales",
+      "pruebaGratisDias": 15,
+      "pruebaSinTarjeta": true,
+      "planes": [
+        {
+          "nombre": "Autónomos básico",
+          "precio": 4.99,
+          "descripcion": "Facturación sencilla para empezar (precio en pago anual)"
+        },
+        {
+          "nombre": "Profesional",
+          "precio": 12.49,
+          "descripcion": "Facturación, contabilidad e impuestos para autónomos"
+        },
+        {
+          "nombre": "Empresa",
+          "precio": 24.0,
+          "descripcion": "Más usuarios, contabilidad completa y funciones avanzadas"
+        }
+      ]
+    },
+    "caracteristicas": {
+      "verifactu": true,
+      "ticketbai": true,
+      "facturaeFace": true,
+      "conciliacionBancaria": true,
+      "ocrGastos": true,
+      "multimoneda": false,
+      "appMovil": true,
+      "appIos": true,
+      "appAndroid": true,
+      "integracionShopify": true,
+      "integracionWoocommerce": true,
+      "integracionStripe": false,
+      "modelosImpuestos": true,
+      "presentaImpuestos": true,
+      "crm": false,
+      "gestionProyectos": true,
+      "inventario": true,
+      "contabilidadCompleta": true,
+      "multiusuario": true,
+      "multiempresa": true,
+      "accesoGestoria": true
+    },
+    "modelosFiscales": [
+      "303",
+      "130",
+      "111",
+      "115",
+      "349",
+      "390",
+      "347",
+      "180",
+      "190"
+    ],
+    "pros": [
+      "Presenta los impuestos directamente desde la plataforma",
+      "CleverScan: reconocimiento de tickets y facturas con más del 98% de acierto",
+      "Conciliación bancaria inteligente con más de 70 entidades"
+    ],
+    "contras": [
+      "No tiene programa de afiliación público (de momento)",
+      "Módulos de stock y proyectos tienen coste adicional",
+      "Diseño algo menos moderno que competidores nativos cloud"
+    ],
+    "idealPara": "Autónomos y pymes que quieren automatizar al máximo la contabilidad y trabajar codo con codo con su gestor",
+    "noRecomendadoSi": "Buscas la herramienta más barata y solo necesitas emitir facturas básicas",
+    "afiliacion": {
+      "tienePrograma": false,
+      "plataforma": "Sin programa de afiliación público (candidato a acuerdo manual)",
+      "comision": "-",
+      "linkAfiliado": "https://www.anfix.com"
+    }
+  },
+  {
+    "slug": "contasimple",
+    "nombre": "Contasimple",
+    "nombreCompleto": "Cegid Contasimple",
+    "web": "https://www.contasimple.com",
+    "logo": "/logos/contasimple.png",
+    "fundacion": 2012,
+    "empresa": "Cegid (adquirió Contasimple)",
+    "sede": "Barcelona",
+    "puntuacion": 7.0,
+    "targetPrincipal": "Autónomos con bajo volumen y microempresas",
+    "resumenCorto": "De los programas más accesibles del mercado, con un plan gratuito real y una curva de aprendizaje mínima. Ideal para quienes empiezan y facturan poco.",
+    "badge": "Mejor plan gratuito",
+    "precios": {
+      "tieneePlanGratis": true,
+      "desde": 9.95,
+      "moneda": "EUR",
+      "periodo": "mes",
+      "notaPrecio": "Plan gratuito limitado + dos planes de pago (facturación anual)",
+      "pruebaGratisDias": 30,
+      "pruebaSinTarjeta": true,
+      "planes": [
+        {
+          "nombre": "Gratis",
+          "precio": 0,
+          "descripcion": "Funcionalidades básicas con límite de facturas, ideal para empezar"
+        },
+        {
+          "nombre": "Plan medio",
+          "precio": 9.95,
+          "descripcion": "Facturación y contabilidad con más capacidad (pago anual)"
+        },
+        {
+          "nombre": "Plan superior",
+          "precio": 15.95,
+          "descripcion": "Funciones completas, multiempresa y más usuarios (pago anual)"
+        }
+      ]
+    },
+    "caracteristicas": {
+      "verifactu": true,
+      "ticketbai": true,
+      "facturaeFace": true,
+      "conciliacionBancaria": false,
+      "ocrGastos": false,
+      "multimoneda": true,
+      "appMovil": true,
+      "appIos": true,
+      "appAndroid": true,
+      "integracionShopify": false,
+      "integracionWoocommerce": false,
+      "integracionStripe": false,
+      "modelosImpuestos": true,
+      "presentaImpuestos": false,
+      "crm": false,
+      "gestionProyectos": false,
+      "inventario": true,
+      "contabilidadCompleta": true,
+      "multiusuario": true,
+      "multiempresa": true,
+      "accesoGestoria": true
+    },
+    "modelosFiscales": [
+      "303",
+      "130",
+      "111",
+      "349",
+      "390"
+    ],
+    "pros": [
+      "Plan gratuito real para empezar sin coste",
+      "Sistema visual de colores para el estado de cada factura, muy intuitivo",
+      "Multiempresa de los mejores del mercado en su rango de precio"
+    ],
+    "contras": [
+      "El plan gratuito tiene un límite bajo de facturas",
+      "Sin conciliación bancaria avanzada ni OCR de gastos",
+      "Diseño visualmente algo anticuado"
+    ],
+    "idealPara": "Autónomos que facturan poco y quieren empezar gratis cumpliendo la normativa",
+    "noRecomendadoSi": "Necesitas conciliación bancaria, OCR o integraciones potentes",
+    "afiliacion": {
+      "tienePrograma": false,
+      "plataforma": "Sin programa de afiliación público (candidato a acuerdo manual)",
+      "comision": "-",
+      "linkAfiliado": "https://www.contasimple.com"
+    }
+  },
+  {
+    "slug": "facturadirecta",
+    "nombre": "FacturaDirecta",
+    "nombreCompleto": "FacturaDirecta",
+    "web": "https://www.facturadirecta.com",
+    "logo": "/logos/facturadirecta.png",
+    "fundacion": 2009,
+    "empresa": "FacturaDirecta",
+    "sede": "España",
+    "puntuacion": 7.5,
+    "targetPrincipal": "Autónomos y pymes pequeñas",
+    "resumenCorto": "Facturación online muy sencilla y específica para el mercado español, con plan gratuito e integración directa con gestorías. Más de 90.000 usuarios.",
+    "badge": "Sencillez española",
+    "precios": {
+      "tieneePlanGratis": true,
+      "desde": 10.0,
+      "moneda": "EUR",
+      "periodo": "mes",
+      "notaPrecio": "Plan gratis + planes de pago. 16,67% de descuento en pago anual",
+      "pruebaGratisDias": 30,
+      "pruebaSinTarjeta": true,
+      "planes": [
+        {
+          "nombre": "Gratis",
+          "precio": 0,
+          "descripcion": "Hasta 10 clientes y 10 productos, Verifactu y facturación básica"
+        },
+        {
+          "nombre": "Básico",
+          "precio": 10.0,
+          "descripcion": "Clientes y documentos ilimitados, firma digital, API, libros de IVA"
+        },
+        {
+          "nombre": "Avanzado",
+          "precio": 20.0,
+          "descripcion": "Enlace con bancos, remesas SEPA, buzón de gastos, Zapier"
+        },
+        {
+          "nombre": "Total",
+          "precio": 30.0,
+          "descripcion": "Contabilidad completa con asientos, libros oficiales y PGC"
+        }
+      ]
+    },
+    "caracteristicas": {
+      "verifactu": true,
+      "ticketbai": true,
+      "facturaeFace": true,
+      "conciliacionBancaria": true,
+      "ocrGastos": true,
+      "multimoneda": true,
+      "appMovil": true,
+      "appIos": true,
+      "appAndroid": true,
+      "integracionShopify": false,
+      "integracionWoocommerce": false,
+      "integracionStripe": false,
+      "modelosImpuestos": true,
+      "presentaImpuestos": false,
+      "crm": false,
+      "gestionProyectos": false,
+      "inventario": false,
+      "contabilidadCompleta": true,
+      "multiusuario": true,
+      "multiempresa": false,
+      "accesoGestoria": true
+    },
+    "modelosFiscales": [
+      "303",
+      "130",
+      "111",
+      "202"
+    ],
+    "pros": [
+      "Plan gratuito real para autónomos que empiezan",
+      "Integración directa con gestoría y servicio de asesoría online",
+      "Firma digital de documentos en todos los planes de pago"
+    ],
+    "contras": [
+      "El plan gratuito limita a 10 clientes y 10 productos",
+      "Sin gestión de stock ni inventario",
+      "Personalización de facturas e integraciones más limitadas que la competencia"
+    ],
+    "idealPara": "Autónomos y pymes pequeñas que quieren facturación sencilla en español con opción de gestoría integrada",
+    "noRecomendadoSi": "Necesitas inventario, muchas integraciones o gestión de proyectos",
+    "afiliacion": {
+      "tienePrograma": false,
+      "plataforma": "Sin programa de afiliación público (candidato a acuerdo manual)",
+      "comision": "-",
+      "linkAfiliado": "https://www.facturadirecta.com"
+    }
+  },
+  {
+    "slug": "cuentica",
+    "nombre": "Cuéntica",
+    "nombreCompleto": "Cuéntica",
+    "web": "https://cuentica.com",
+    "logo": "/logos/cuentica.png",
+    "fundacion": 2011,
+    "empresa": "Cuéntica",
+    "sede": "España",
+    "puntuacion": 7.5,
+    "targetPrincipal": "Autónomos que quieren claridad fiscal",
+    "resumenCorto": "Software de facturación y contabilidad muy adaptado al mercado español, con un panel fiscal claro y previsiones automáticas de IVA e IRPF. Ideal para entender tu situación sin depender del asesor.",
+    "badge": "Mejor control fiscal",
+    "precios": {
+      "tieneePlanGratis": false,
+      "desde": 16.5,
+      "moneda": "EUR",
+      "periodo": "mes",
+      "notaPrecio": "Dos planes principales. Demo gratuita de 15 días",
+      "pruebaGratisDias": 15,
+      "pruebaSinTarjeta": true,
+      "planes": [
+        {
+          "nombre": "Solo",
+          "precio": 16.5,
+          "descripcion": "Para autónomos: facturación, contabilidad y control fiscal"
+        },
+        {
+          "nombre": "Sidecar",
+          "precio": 29.0,
+          "descripcion": "Más funciones y capacidad para negocios con más actividad"
+        }
+      ]
+    },
+    "caracteristicas": {
+      "verifactu": true,
+      "ticketbai": true,
+      "facturaeFace": true,
+      "conciliacionBancaria": true,
+      "ocrGastos": false,
+      "multimoneda": false,
+      "appMovil": false,
+      "appIos": false,
+      "appAndroid": false,
+      "integracionShopify": false,
+      "integracionWoocommerce": false,
+      "integracionStripe": false,
+      "modelosImpuestos": true,
+      "presentaImpuestos": true,
+      "crm": false,
+      "gestionProyectos": false,
+      "inventario": false,
+      "contabilidadCompleta": true,
+      "multiusuario": true,
+      "multiempresa": false,
+      "accesoGestoria": true
+    },
+    "modelosFiscales": [
+      "303",
+      "130",
+      "111",
+      "115",
+      "349",
+      "390"
+    ],
+    "pros": [
+      "Panel fiscal muy claro con previsiones automáticas de IVA e IRPF",
+      "Calendario fiscal personalizado según tu actividad",
+      "Interfaz cuidada y orientada a que el autónomo entienda su fiscalidad"
+    ],
+    "contras": [
+      "No tiene app móvil",
+      "No incluye lector OCR (los gastos se introducen manualmente)",
+      "Sin gestión de inventario ni control de stock"
+    ],
+    "idealPara": "Autónomos que quieren claridad fiscal y entender su negocio sin depender en exceso del asesor",
+    "noRecomendadoSi": "Necesitas app móvil, OCR de gastos o gestión de inventario",
+    "afiliacion": {
+      "tienePrograma": false,
+      "plataforma": "Sin programa de afiliación público (candidato a acuerdo manual)",
+      "comision": "-",
+      "linkAfiliado": "https://cuentica.com"
+    }
+  },
+  {
+    "slug": "zoho-books",
+    "nombre": "Zoho Books",
+    "nombreCompleto": "Zoho Books",
+    "web": "https://www.zoho.com/es-xl/books/",
+    "logo": "/logos/zoho-books.png",
+    "fundacion": 2011,
+    "empresa": "Zoho Corporation (India)",
+    "sede": "Chennai (India)",
+    "puntuacion": 8.0,
+    "targetPrincipal": "Empresas digitales, agencias y usuarios del ecosistema Zoho",
+    "resumenCorto": "Software de contabilidad en la nube potente y escalable, parte del enorme ecosistema Zoho. Multimoneda, multiidioma y con integración nativa con Zoho CRM, Inventory y más.",
+    "badge": "Mejor ecosistema",
+    "precios": {
+      "tieneePlanGratis": true,
+      "desde": 0,
+      "moneda": "EUR",
+      "periodo": "mes",
+      "notaPrecio": "Plan gratuito para microempresas + planes de pago escalables",
+      "pruebaGratisDias": 14,
+      "pruebaSinTarjeta": true,
+      "planes": [
+        {
+          "nombre": "Free",
+          "precio": 0,
+          "descripcion": "Para microempresas y autónomos con bajo volumen"
+        },
+        {
+          "nombre": "Standard",
+          "precio": 15.0,
+          "descripcion": "Funciones de contabilidad y facturación para negocios en marcha"
+        },
+        {
+          "nombre": "Professional",
+          "precio": 40.0,
+          "descripcion": "Inventario, proyectos y funciones avanzadas"
+        }
+      ]
+    },
+    "caracteristicas": {
+      "verifactu": false,
+      "ticketbai": false,
+      "facturaeFace": false,
+      "conciliacionBancaria": true,
+      "ocrGastos": true,
+      "multimoneda": true,
+      "appMovil": true,
+      "appIos": true,
+      "appAndroid": true,
+      "integracionShopify": true,
+      "integracionWoocommerce": true,
+      "integracionStripe": true,
+      "modelosImpuestos": false,
+      "presentaImpuestos": false,
+      "crm": true,
+      "gestionProyectos": true,
+      "inventario": true,
+      "contabilidadCompleta": true,
+      "multiusuario": true,
+      "multiempresa": true,
+      "accesoGestoria": true
+    },
+    "modelosFiscales": [],
+    "pros": [
+      "Plan gratuito real para microempresas",
+      "Integración nativa con todo el ecosistema Zoho (CRM, Inventory, Analytics...)",
+      "Multimoneda y disponible en 11 idiomas, ideal para negocios internacionales"
+    ],
+    "contras": [
+      "El cumplimiento de Verifactu/Facturae en España requiere integración externa (ej. B2B Router)",
+      "No genera ni presenta los modelos fiscales españoles de forma nativa",
+      "Soporte y orientación menos enfocados al mercado español"
+    ],
+    "idealPara": "Empresas digitales, agencias y negocios internacionales que ya usan o quieren usar el ecosistema Zoho",
+    "noRecomendadoSi": "Eres autónomo en España y quieres cumplimiento Verifactu y modelos fiscales nativos sin complicaciones",
+    "afiliacion": {
+      "tienePrograma": true,
+      "plataforma": "Sistema propio Zoho",
+      "comision": "15% recurrente durante 12 meses",
+      "linkAfiliado": "PENDIENTE_INSERTAR_LINK_ZOHO"
+    }
+  },
+  {
+    "slug": "freshbooks",
+    "nombre": "FreshBooks",
+    "nombreCompleto": "FreshBooks",
+    "web": "https://www.freshbooks.com",
+    "logo": "/logos/freshbooks.png",
+    "fundacion": 2003,
+    "empresa": "FreshBooks (Canadá)",
+    "sede": "Toronto (Canadá)",
+    "puntuacion": 7.0,
+    "targetPrincipal": "Freelancers y pequeños negocios de servicios internacionales",
+    "resumenCorto": "Uno de los software de facturación más populares del mundo para freelancers, con una experiencia de uso excelente. Eso sí, está pensado para mercado internacional, no para el cumplimiento fiscal español.",
+    "badge": "Mejor para internacional",
+    "precios": {
+      "tieneePlanGratis": false,
+      "desde": 19.0,
+      "moneda": "USD",
+      "periodo": "mes",
+      "notaPrecio": "Precios en dólares. 10% de descuento en pago anual",
+      "pruebaGratisDias": 30,
+      "pruebaSinTarjeta": true,
+      "planes": [
+        {
+          "nombre": "Lite",
+          "precio": 19.0,
+          "descripcion": "Hasta 5 clientes facturables, ideal para empezar (USD)"
+        },
+        {
+          "nombre": "Plus",
+          "precio": 33.0,
+          "descripcion": "Hasta 50 clientes, automatización y más funciones (USD)"
+        },
+        {
+          "nombre": "Premium",
+          "precio": 60.0,
+          "descripcion": "Clientes ilimitados y funciones avanzadas (USD)"
+        }
+      ]
+    },
+    "caracteristicas": {
+      "verifactu": false,
+      "ticketbai": false,
+      "facturaeFace": false,
+      "conciliacionBancaria": true,
+      "ocrGastos": true,
+      "multimoneda": true,
+      "appMovil": true,
+      "appIos": true,
+      "appAndroid": true,
+      "integracionShopify": true,
+      "integracionWoocommerce": true,
+      "integracionStripe": true,
+      "modelosImpuestos": false,
+      "presentaImpuestos": false,
+      "crm": false,
+      "gestionProyectos": true,
+      "inventario": false,
+      "contabilidadCompleta": true,
+      "multiusuario": true,
+      "multiempresa": false,
+      "accesoGestoria": true
+    },
+    "modelosFiscales": [],
+    "pros": [
+      "Experiencia de usuario excelente, de las mejores del mercado",
+      "Muy fuerte en seguimiento de tiempo y facturación por proyectos",
+      "Ideal para freelancers que trabajan con clientes internacionales"
+    ],
+    "contras": [
+      "NO cumple Verifactu ni Facturae de forma nativa: no apto para facturar en modo Verifactu en España",
+      "Precios en dólares y orientación al mercado anglosajón",
+      "No genera modelos fiscales españoles"
+    ],
+    "idealPara": "Freelancers españoles que facturan principalmente a clientes internacionales y priorizan la experiencia de uso",
+    "noRecomendadoSi": "Necesitas cumplir Verifactu y presentar impuestos en España (la mayoría de autónomos españoles)",
+    "afiliacion": {
+      "tienePrograma": true,
+      "plataforma": "ShareASale / programa propio",
+      "comision": "Hasta 200$ por cliente, 10$ por trial",
+      "linkAfiliado": "PENDIENTE_INSERTAR_LINK_FRESHBOOKS"
+    }
   }
 ]
