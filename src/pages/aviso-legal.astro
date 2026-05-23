@@ -1,0 +1,162 @@
+---
+import Layout from "../layouts/Layout.astro";
+const updated = new Date().toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" });
+---
+
+<Layout
+  title="Aviso legal — Compara Facturación"
+  description="Aviso legal de Compara Facturación conforme a la Ley 34/2002, de Servicios de la Sociedad de la Información (LSSI)."
+>
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+
+    <!-- Cabecera -->
+    <div class="mb-10">
+      <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Legal</p>
+      <h1 class="font-display text-4xl sm:text-5xl font-bold text-slate-900 leading-tight mb-4">
+        Aviso legal
+      </h1>
+      <p class="text-sm text-slate-400">Última actualización: {updated}</p>
+    </div>
+
+    <!-- Banner de placeholders -->
+    <div class="bg-amber-50 border border-amber-300 rounded-xl p-4 mb-10 flex gap-3">
+      <svg class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/>
+      </svg>
+      <p class="text-sm text-amber-800">
+        <strong>Pendiente de completar:</strong> sustituye los textos entre corchetes
+        <code>[ASÍ]</code> con tus datos reales antes de publicar.
+      </p>
+    </div>
+
+    <div class="prose-legal">
+
+      <h2>1. Datos identificativos del titular</h2>
+      <p>
+        En cumplimiento de lo establecido en el artículo 10 de la Ley 34/2002, de 11 de julio,
+        de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE),
+        se informa de los datos identificativos del titular de este sitio web:
+      </p>
+      <ul>
+        <li><strong>Titular:</strong> <mark>[TU NOMBRE COMPLETO O DENOMINACIÓN SOCIAL]</mark></li>
+        <li><strong>NIF / DNI:</strong> <mark>[TU NIF]</mark></li>
+        <li><strong>Domicilio:</strong> <mark>[TU DIRECCIÓN]</mark></li>
+        <li><strong>Correo electrónico de contacto:</strong> <mark>[TU EMAIL]</mark></li>
+        <li><strong>Dominio:</strong> comparafacturacion.com</li>
+      </ul>
+
+      <h2>2. Objeto y ámbito de aplicación</h2>
+      <p>
+        El presente Aviso Legal regula el acceso y uso del sitio web comparafacturacion.com
+        (en adelante, "el Sitio"), titularidad de <mark>[TU NOMBRE COMPLETO]</mark>.
+        El acceso al Sitio implica la aceptación de las presentes condiciones.
+      </p>
+
+      <h2>3. Condiciones de uso</h2>
+      <p>
+        El usuario se compromete a hacer un uso lícito del Sitio, sin vulnerar los derechos de
+        terceros ni infringir la normativa vigente. Queda prohibida la reproducción total o parcial
+        del contenido sin autorización expresa del titular.
+      </p>
+      <p>
+        El titular se reserva el derecho de modificar, suspender o interrumpir el acceso al Sitio
+        en cualquier momento y sin previo aviso.
+      </p>
+
+      <h2>4. Propiedad intelectual e industrial</h2>
+      <p>
+        Todos los contenidos del Sitio —textos, análisis, imágenes, logotipos y código fuente—
+        son propiedad del titular o se utilizan con la debida autorización, y están protegidos
+        por la legislación española e internacional sobre propiedad intelectual e industrial.
+      </p>
+      <p>
+        Los nombres comerciales, marcas y logotipos de los productos analizados son propiedad
+        de sus respectivos titulares y se mencionan únicamente con fines informativos.
+      </p>
+
+      <h2>5. Exactitud de la información y exención de responsabilidad</h2>
+      <p>
+        La información publicada en este Sitio —precios, características, planes y condiciones
+        de los productos analizados— se actualiza periódicamente, pero puede no reflejar en
+        todo momento los datos más recientes facilitados por cada fabricante.
+      </p>
+      <p>
+        <strong>El titular no se hace responsable de los errores u omisiones en la información
+        publicada.</strong> Se recomienda expresamente verificar precios, condiciones y
+        características directamente en la web oficial de cada producto antes de tomar
+        cualquier decisión de compra o contratación.
+      </p>
+      <p>
+        El titular no garantiza la disponibilidad continua del Sitio ni se responsabiliza de
+        los daños que pudieran derivarse de su uso o de la imposibilidad de acceder a él.
+      </p>
+
+      <h2>6. Enlaces a terceros</h2>
+      <p>
+        El Sitio puede contener enlaces a páginas web de terceros. Algunos de estos enlaces
+        son enlaces de afiliado (consulta nuestra{" "}
+        <a href="/divulgacion-afiliados">Divulgación de afiliados</a>). El titular no controla
+        ni se responsabiliza del contenido de dichas páginas externas.
+      </p>
+
+      <h2>7. Legislación aplicable y jurisdicción</h2>
+      <p>
+        Las presentes condiciones se rigen por la legislación española. Para la resolución de
+        cualquier controversia derivada del uso del Sitio, las partes se someten, con renuncia
+        expresa a cualquier otro fuero, a los Juzgados y Tribunales del domicilio del titular.
+      </p>
+
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .prose-legal {
+    color: #334155;
+    line-height: 1.8;
+    font-size: 1rem;
+  }
+  .prose-legal h2 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .prose-legal p {
+    margin-bottom: 1rem;
+  }
+  .prose-legal ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+  }
+  .prose-legal li {
+    margin-bottom: 0.35rem;
+  }
+  .prose-legal strong {
+    color: #0f172a;
+    font-weight: 600;
+  }
+  .prose-legal a {
+    color: #1e40af;
+    text-decoration: underline;
+  }
+  .prose-legal mark {
+    background: #fef9c3;
+    color: #92400e;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+  .prose-legal code {
+    font-size: 0.85em;
+    background: #f1f5f9;
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: #1e40af;
+  }
+</style>

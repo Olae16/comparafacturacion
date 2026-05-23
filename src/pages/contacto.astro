@@ -1,0 +1,98 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Contacto — Compara Facturación"
+  description="¿Tienes alguna duda, sugerencia o quieres proponernos una colaboración? Escríbenos."
+>
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+
+    <!-- Cabecera -->
+    <div class="mb-10">
+      <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Escríbenos</p>
+      <h1 class="font-display text-4xl sm:text-5xl font-bold text-slate-900 leading-tight mb-4">
+        Contacto
+      </h1>
+      <p class="text-lg text-slate-600 leading-relaxed">
+        ¿Tienes una pregunta, has detectado un error en alguna reseña o quieres
+        proponernos una colaboración? Nos encanta recibir feedback.
+      </p>
+    </div>
+
+    <!-- Email destacado -->
+    <div class="bg-[--color-primary-light] border border-primary/20 rounded-2xl p-8 mb-10 text-center">
+      <p class="text-sm text-slate-500 mb-2">Puedes escribirnos directamente a</p>
+      <a
+        href="mailto:[TU EMAIL]"
+        class="font-display text-2xl font-semibold text-primary hover:text-[--color-primary-dark] transition-colors break-all"
+      >
+        <mark class="bg-yellow-100 text-amber-800 px-2 py-0.5 rounded font-bold not-italic">[TU EMAIL]</mark>
+      </a>
+      <p class="text-xs text-slate-400 mt-3">Intentamos responder en menos de 48 horas</p>
+    </div>
+
+    <!-- Para qué escribirnos -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-14">
+
+      <div class="bg-white border border-slate-200 rounded-xl p-5 flex gap-4">
+        <div class="w-9 h-9 bg-[--color-primary-light] rounded-lg flex items-center justify-center shrink-0">
+          <svg class="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="font-display font-semibold text-slate-900 text-sm mb-1">Errores o datos desactualizados</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">Si detectas que un precio o una característica está mal, cuéntanoslo y lo corregimos.</p>
+        </div>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-5 flex gap-4">
+        <div class="w-9 h-9 bg-[--color-secondary-light] rounded-lg flex items-center justify-center shrink-0">
+          <svg class="w-4 h-4 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="font-display font-semibold text-slate-900 text-sm mb-1">Sugerencias y feedback</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">¿Echas de menos algún programa? ¿Algo que mejorar? Tu opinión nos ayuda a mejorar.</p>
+        </div>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-5 flex gap-4">
+        <div class="w-9 h-9 bg-amber-50 rounded-lg flex items-center justify-center shrink-0">
+          <svg class="w-4 h-4 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 2.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="font-display font-semibold text-slate-900 text-sm mb-1">Colaboraciones</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">¿Representas a un software de facturación y quieres que lo analicemos? Escríbenos.</p>
+        </div>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-5 flex gap-4">
+        <div class="w-9 h-9 bg-slate-100 rounded-lg flex items-center justify-center shrink-0">
+          <svg class="w-4 h-4 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="font-display font-semibold text-slate-900 text-sm mb-1">Privacidad y legal</h3>
+          <p class="text-xs text-slate-500 leading-relaxed">Para ejercer tus derechos RGPD o cualquier cuestión legal, también puedes escribirnos.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Formulario próximamente -->
+    <div class="border-2 border-dashed border-slate-200 rounded-2xl p-8 text-center text-slate-400">
+      <svg class="w-8 h-8 mx-auto mb-3 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/>
+      </svg>
+      <p class="text-sm font-medium text-slate-400">Formulario de contacto</p>
+      <p class="text-xs text-slate-300 mt-1">Próximamente disponible · Por ahora, escríbenos al email de arriba</p>
+    </div>
+
+  </div>
+</Layout>

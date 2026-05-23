@@ -1,0 +1,124 @@
+---
+import Layout from "../layouts/Layout.astro";
+const updated = new Date().toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" });
+---
+
+<Layout
+  title="Divulgación de afiliados — Compara Facturación"
+  description="Explicamos con total transparencia cómo funcionan los enlaces de afiliado en Compara Facturación y cómo afectan (o no) a nuestros análisis."
+>
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+
+    <!-- Cabecera -->
+    <div class="mb-10">
+      <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Transparencia</p>
+      <h1 class="font-display text-4xl sm:text-5xl font-bold text-slate-900 leading-tight mb-4">
+        Divulgación de afiliados
+      </h1>
+      <p class="text-sm text-slate-400">Última actualización: {updated}</p>
+    </div>
+
+    <!-- Contenido -->
+    <div class="prose-legal">
+
+      <h2>¿Qué es Compara Facturación?</h2>
+      <p>
+        Compara Facturación es un sitio web independiente dedicado a analizar, comparar y reseñar
+        software de facturación para autónomos y pymes en España. No somos una empresa de software
+        ni estamos vinculados a ninguno de los productos que analizamos.
+      </p>
+      <p>
+        Nuestro objetivo es ayudarte a elegir la herramienta que mejor se adapte a tu negocio,
+        con información honesta, actualizada y sin tecnicismos innecesarios.
+      </p>
+
+      <h2>¿Qué son los enlaces de afiliado?</h2>
+      <p>
+        Algunos de los enlaces que aparecen en este sitio —principalmente los botones "Probar [programa]"
+        en las páginas de reseña— son <strong>enlaces de afiliado</strong>. Esto significa que, si haces
+        clic en uno de ellos y acabas contratando el producto, nosotros podemos recibir una comisión
+        por parte del fabricante del software.
+      </p>
+      <p>
+        <strong>Esto no tiene ningún coste adicional para ti.</strong> El precio que pagas es exactamente
+        el mismo que si hubieras ido directamente a la web del programa. La comisión la paga el fabricante,
+        no tú.
+      </p>
+      <p>
+        Los enlaces de afiliado están marcados con el atributo <code>rel="sponsored nofollow"</code>
+        y, en algunos casos, con una nota visible junto al botón.
+      </p>
+
+      <h2>¿Influyen las comisiones en nuestros análisis?</h2>
+      <p>
+        <strong>No.</strong> Las comisiones no influyen en las valoraciones, en el orden en que
+        aparecen los productos ni en el contenido de las reseñas.
+      </p>
+      <p>
+        Evaluamos todos los programas con los mismos criterios objetivos: precio, facilidad de uso,
+        cumplimiento normativo (Verifactu, TicketBAI, modelos fiscales), características, soporte
+        y relación calidad-precio. Un producto con programa de afiliación no recibe mejor puntuación
+        que uno sin él.
+      </p>
+      <p>
+        De hecho, algunos de los programas que analizamos no tienen programa de afiliación público,
+        y eso no les resta ni un punto en nuestra valoración.
+      </p>
+
+      <h2>¿Por qué usamos afiliación?</h2>
+      <p>
+        Mantener este sitio —investigar productos, actualizar datos, redactar análisis— requiere tiempo
+        y recursos. Los ingresos por afiliación nos permiten seguir ofreciendo contenido gratuito
+        y sin muros de pago.
+      </p>
+      <p>
+        Es el mismo modelo que usan muchos medios de tecnología y comparadores honestos: te ayudamos
+        gratis, y si te resulta útil y acabas contratando algo a través de nosotros, recibimos una
+        pequeña compensación.
+      </p>
+
+      <h2>Recomendación antes de contratar</h2>
+      <p>
+        Te recomendamos siempre <strong>verificar precios, condiciones y características directamente
+        en la web oficial</strong> de cada producto antes de contratar. Los precios pueden cambiar
+        y nosotros actualizamos las fichas mensualmente, pero puede haber un pequeño desfase.
+      </p>
+      <p>
+        Si detectas algún dato incorrecto en nuestros análisis, escríbenos y lo corregimos lo antes posible.
+      </p>
+
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .prose-legal {
+    color: #334155;
+    line-height: 1.8;
+    font-size: 1rem;
+  }
+  .prose-legal h2 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .prose-legal p {
+    margin-bottom: 1rem;
+  }
+  .prose-legal strong {
+    color: #0f172a;
+    font-weight: 600;
+  }
+  .prose-legal code {
+    font-size: 0.85em;
+    background: #f1f5f9;
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: #1e40af;
+  }
+</style>
