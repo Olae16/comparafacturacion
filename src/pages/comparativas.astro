@@ -1,0 +1,146 @@
+---
+import Layout from "../layouts/Layout.astro";
+import productos from "../data/productos.json";
+
+const PARES: [string, string][] = [
+  ["quipu",        "billin"],
+  ["quipu",        "holded"],
+  ["quipu",        "anfix"],
+  ["quipu",        "sage"],
+  ["quipu",        "cuentica"],
+  ["holded",       "sage"],
+  ["holded",       "anfix"],
+  ["billin",       "anfix"],
+  ["billin",       "facturadirecta"],
+  ["anfix",        "contasimple"],
+  ["anfix",        "sage"],
+  ["anfix",        "cuentica"],
+  ["contasimple",  "facturadirecta"],
+  ["contasimple",  "cuentica"],
+];
+
+function getNombre(slug: string) {
+  return productos.find(p => p.slug === slug)?.nombre ?? slug;
+}
+function getPuntuacion(slug: string) {
+  return productos.find(p => p.slug === slug)?.puntuacion ?? 0;
+}
+function getResumen(slug: string) {
+  return productos.find(p => p.slug === slug)?.badge ?? "";
+}
+
+const siteUrl = "https://comparafacturacion.com";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio",       "item": siteUrl },
+        { "@type": "ListItem", "position": 2, "name": "Comparativas", "item": `${siteUrl}/comparativas` },
+      ],
+    },
+  ],
+};
+---
+
+<Layout
+  title="Comparativas de software de facturación 2026"
+  description="Comparativas cara a cara entre los mejores programas de facturación para autónomos y pymes en España. Quipu vs Holded, Billin vs Anfix y muchas más."
+>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+
+  <!-- ── CABECERA -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-[--color-primary-light]/60 to-transparent pointer-events-none"></div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 md:pt-24 md:pb-16">
+
+      <nav class="text-xs text-slate-500 mb-6 flex items-center gap-1.5">
+        <a href="/" class="hover:text-primary transition-colors">Inicio</a>
+        <span>›</span>
+        <span class="text-slate-700 font-medium">Comparativas</span>
+      </nav>
+
+      <div class="max-w-2xl">
+        <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Comparativas 2026</p>
+        <h1 class="font-display text-4xl sm:text-5xl font-bold text-slate-900 leading-tight mb-4">
+          Comparativas de software<br class="hidden sm:block"/> de facturación
+        </h1>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          {PARES.length} comparativas cara a cara entre los programas más buscados.
+          Precios, características y un veredicto claro para que elijas sin dudar.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GRID DE COMPARATIVAS -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+      {PARES.map(([a, b]) => {
+        const nA = getNombre(a);
+        const nB = getNombre(b);
+        const pA = getPuntuacion(a);
+        const pB = getPuntuacion(b);
+        const bA = getResumen(a);
+        const bB = getResumen(b);
+        return (
+          <a
+            href={`/comparativa/${a}-vs-${b}`}
+            class="group bg-white border border-slate-200 rounded-2xl p-5 hover:shadow-md hover:border-primary/30 transition-all duration-200 flex flex-col gap-3"
+          >
+            <!-- Nombres de los dos productos -->
+            <div class="flex items-center gap-2">
+              <div class="flex-1 min-w-0">
+                <p class="font-display font-semibold text-slate-900 text-base truncate">{nA}</p>
+                <p class="text-xs text-slate-400">{bA}</p>
+              </div>
+              <span class="text-xs font-bold text-slate-400 shrink-0">vs</span>
+              <div class="flex-1 min-w-0 text-right">
+                <p class="font-display font-semibold text-slate-900 text-base truncate">{nB}</p>
+                <p class="text-xs text-slate-400">{bB}</p>
+              </div>
+            </div>
+
+            <!-- Puntuaciones -->
+            <div class="flex items-center gap-2">
+              <span class="flex-1 text-center text-xs font-bold text-amber-700 bg-amber-50 py-1.5 rounded-lg">★ {pA}/10</span>
+              <span class="flex-1 text-center text-xs font-bold text-amber-700 bg-amber-50 py-1.5 rounded-lg">★ {pB}/10</span>
+            </div>
+
+            <!-- CTA inline -->
+            <div class="flex items-center justify-between pt-2 border-t border-slate-100">
+              <span class="text-xs text-slate-400">Comparativa completa</span>
+              <span class="text-xs font-semibold text-primary group-hover:translate-x-0.5 transition-transform flex items-center gap-0.5">
+                Ver →
+              </span>
+            </div>
+          </a>
+        );
+      })}
+
+    </div>
+  </section>
+
+  <!-- ── CTA a programas -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+    <div class="bg-primary rounded-3xl px-8 py-12 text-center relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full -translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+      <div class="relative">
+        <h2 class="font-display text-3xl font-bold text-white mb-3">¿Buscas análisis individuales?</h2>
+        <p class="text-blue-200 text-base mb-6 max-w-md mx-auto">
+          Consulta las reseñas completas de cada programa con todos sus planes y características.
+        </p>
+        <a href="/programas" class="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-primary font-semibold rounded-xl hover:bg-blue-50 transition-colors shadow-lg text-sm">
+          Ver todos los programas
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
