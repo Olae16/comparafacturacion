@@ -1,0 +1,56 @@
+---
+const categorias = [
+  {
+    slug: "software-facturacion-autonomos",
+    label: "Para autónomos",
+    desc: "Freelancers y profesionales",
+    colorBg: "bg-blue-50",
+    colorBorder: "border-blue-100 hover:border-primary/40",
+    colorText: "text-primary",
+  },
+  {
+    slug: "software-facturacion-gratis",
+    label: "Gratis",
+    desc: "Plan gratuito permanente",
+    colorBg: "bg-green-50",
+    colorBorder: "border-green-100 hover:border-secondary/40",
+    colorText: "text-secondary",
+  },
+  {
+    slug: "software-facturacion-pymes",
+    label: "Para pymes",
+    desc: "Gestión empresarial completa",
+    colorBg: "bg-amber-50",
+    colorBorder: "border-amber-100 hover:border-amber-300",
+    colorText: "text-amber-700",
+  },
+  {
+    slug: "software-facturacion-barato",
+    label: "Los más baratos",
+    desc: "Ordenados por precio",
+    colorBg: "bg-slate-50",
+    colorBorder: "border-slate-200 hover:border-slate-400",
+    colorText: "text-slate-700",
+  },
+  {
+    slug: "software-facturacion-verifactu",
+    label: "Con Verifactu",
+    desc: "Cumplen la normativa",
+    colorBg: "bg-purple-50",
+    colorBorder: "border-purple-100 hover:border-purple-300",
+    colorText: "text-purple-700",
+  },
+];
+---
+
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+  {categorias.map(cat => (
+    <a
+      href={`/${cat.slug}`}
+      class={`group border rounded-xl px-4 py-3.5 transition-all hover:shadow-sm ${cat.colorBg} ${cat.colorBorder}`}
+    >
+      <p class={`text-sm font-semibold mb-0.5 ${cat.colorText}`}>{cat.label}</p>
+      <p class="text-xs text-slate-500">{cat.desc}</p>
+    </a>
+  ))}
+</div>

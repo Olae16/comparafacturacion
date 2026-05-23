@@ -1,0 +1,18 @@
+---
+import CategoryPage from "../components/CategoryPage.astro";
+import productos from "../data/productos.json";
+
+const filtrados = [...productos].sort((a, b) => a.precios.desde - b.precios.desde);
+---
+
+<CategoryPage
+  title="Software de facturación barato: los más económicos 2026"
+  description="Programas de facturación económicos para autónomos y pymes en España. Ordenados de menor a mayor precio, desde los planes gratuitos hasta los más asequibles del mercado."
+  etiqueta="Los más económicos · 2026"
+  h1="Software de facturación barato"
+  intro="Los 10 programas ordenados de menor a mayor precio (plan de pago más económico). Los planes gratuitos aparecen primero. Precios sin descuentos de lanzamiento ni promociones temporales."
+  breadcrumbLabel="Los más baratos"
+  currentSlug="software-facturacion-barato"
+  productos={filtrados}
+  primerBadge="Mejor precio"
+/>

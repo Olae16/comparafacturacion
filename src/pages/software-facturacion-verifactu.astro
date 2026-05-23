@@ -1,0 +1,19 @@
+---
+import CategoryPage from "../components/CategoryPage.astro";
+import productos from "../data/productos.json";
+
+const filtrados = productos
+  .filter(p => p.caracteristicas.verifactu)
+  .sort((a, b) => b.puntuacion - a.puntuacion);
+---
+
+<CategoryPage
+  title="Software de facturación compatible con Verifactu 2026"
+  description="Programas de facturación certificados con Verifactu para autónomos y pymes en España. Cumplen la obligación fiscal del Ministerio de Hacienda sin módulos adicionales."
+  etiqueta="Compatibles con Verifactu · 2026"
+  h1="Software de facturación compatible con Verifactu"
+  intro={`Verifactu es la normativa del Ministerio de Hacienda que obliga a los programas de facturación a registrar y verificar cada factura en tiempo real. Estos ${filtrados.length} programas la cumplen de forma nativa, sin integraciones externas ni coste adicional.`}
+  breadcrumbLabel="Con Verifactu"
+  currentSlug="software-facturacion-verifactu"
+  productos={filtrados}
+/>

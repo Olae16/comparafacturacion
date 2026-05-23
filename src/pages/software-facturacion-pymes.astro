@@ -1,0 +1,19 @@
+---
+import CategoryPage from "../components/CategoryPage.astro";
+import productos from "../data/productos.json";
+
+const filtrados = productos
+  .filter(p => /pyme/i.test(p.targetPrincipal))
+  .sort((a, b) => b.puntuacion - a.puntuacion);
+---
+
+<CategoryPage
+  title="Mejor software de facturación para pymes 2026"
+  description="Los mejores programas de facturación para pymes y empresas en España. Contabilidad completa, multi-usuario, CRM y cumplimiento normativo con Verifactu. Actualizado 2026."
+  etiqueta="Para pymes · 2026"
+  h1="Mejor software de facturación para pymes"
+  intro={`Hemos seleccionado los ${filtrados.length} programas orientados a pymes y empresas en crecimiento: aquellos que ofrecen algo más que facturar —contabilidad real, multi-usuario, gestión de proyectos o CRM— y que escalan con el negocio.`}
+  breadcrumbLabel="Para pymes"
+  currentSlug="software-facturacion-pymes"
+  productos={filtrados}
+/>

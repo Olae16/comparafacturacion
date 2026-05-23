@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import productos from "../data/productos.json";
+import ExploreCategories from "../components/ExploreCategories.astro";
 
 function getBadgeClass(badge: string) {
   if (badge.toLowerCase().includes("precio") || badge.toLowerCase().includes("gratuito")) return "bg-secondary-light text-secondary";
@@ -120,6 +121,12 @@ const programasJsonLd = {
       </div>
     </div>
   </div>
+
+  <!-- ══════════════════════════════════════════ EXPLORA POR CATEGORÍA -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Busca por tipo de negocio</p>
+    <ExploreCategories />
+  </section>
 
   <!-- ══════════════════════════════════════════ GRID DE TARJETAS -->
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">

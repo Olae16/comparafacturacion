@@ -1,0 +1,19 @@
+---
+import CategoryPage from "../components/CategoryPage.astro";
+import productos from "../data/productos.json";
+
+const filtrados = productos
+  .filter(p => /aut[oó]nomo|freelancer/i.test(p.targetPrincipal))
+  .sort((a, b) => b.puntuacion - a.puntuacion);
+---
+
+<CategoryPage
+  title="Mejor software de facturación para autónomos 2026"
+  description="Los mejores programas de facturación para autónomos y freelancers en España. Comparamos precios reales, compatibilidad con Verifactu y facilidad de uso. Actualizado 2026."
+  etiqueta="Para autónomos · 2026"
+  h1="Mejor software de facturación para autónomos"
+  intro={`Hemos seleccionado los ${filtrados.length} programas cuya propuesta de valor principal está orientada a profesionales independientes: precio ajustado, facilidad de uso y cumplimiento con Verifactu sin necesidad de gestor.`}
+  breadcrumbLabel="Para autónomos"
+  currentSlug="software-facturacion-autonomos"
+  productos={filtrados}
+/>

@@ -1,0 +1,20 @@
+---
+import CategoryPage from "../components/CategoryPage.astro";
+import productos from "../data/productos.json";
+
+const filtrados = productos
+  .filter(p => p.precios.tieneePlanGratis)
+  .sort((a, b) => b.puntuacion - a.puntuacion);
+---
+
+<CategoryPage
+  title="Software de facturación gratis para autónomos 2026"
+  description="Programas de facturación con plan gratuito permanente para autónomos y pymes en España. No son pruebas de 14 días: puedes facturar sin pagar nada, aunque con límites."
+  etiqueta="Plan gratuito · 2026"
+  h1="Software de facturación gratis"
+  intro={`Estos ${filtrados.length} programas ofrecen un plan gratuito permanente —no una prueba de tiempo limitado—. Puedes empezar a facturar sin tarjeta ni compromiso, aunque cada plan tiene restricciones en el número de facturas mensuales o en las funciones disponibles.`}
+  breadcrumbLabel="Gratis"
+  currentSlug="software-facturacion-gratis"
+  productos={filtrados}
+  primerBadge="Mejor valorado"
+/>
