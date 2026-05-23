@@ -44,6 +44,9 @@ const pageDescription = `Análisis completo de ${p.nombre}. Planes desde ${p.pre
 
 const cara = p.caracteristicas as Record<string, boolean>;
 
+const ctaUrl = p.afiliacion.linkAfiliado.startsWith("http") ? p.afiliacion.linkAfiliado : p.web;
+const isAffiliate = p.afiliacion.linkAfiliado.startsWith("http");
+
 const updateDate = new Date().toLocaleDateString("es-ES", { month: "long", year: "numeric" });
 
 const planGridClass =
@@ -182,9 +185,9 @@ const jsonLd = {
         <!-- CTA principal -->
         <div class="flex flex-col items-start md:items-end gap-3 shrink-0">
           <a
-            href={p.afiliacion.linkAfiliado}
+            href={ctaUrl}
             target="_blank"
-            rel="sponsored nofollow"
+            rel={isAffiliate ? "sponsored nofollow" : "nofollow"}
             class="inline-flex items-center justify-center gap-2 px-7 py-4 bg-secondary text-white font-semibold rounded-xl hover:bg-[--color-secondary-dark] transition-colors shadow-lg shadow-green-200 text-base whitespace-nowrap"
           >
             Probar {p.nombre} gratis
@@ -195,7 +198,7 @@ const jsonLd = {
           <p class="text-xs text-slate-500 text-right">
             {p.precios.pruebaGratisDias} días gratis · Sin tarjeta
           </p>
-          {p.afiliacion.tienePrograma && (
+          {isAffiliate && p.afiliacion.tienePrograma && (
             <p class="text-xs text-slate-400 text-right">Enlace de afiliado · sin coste adicional para ti</p>
           )}
         </div>
@@ -265,9 +268,9 @@ const jsonLd = {
             </div>
             <p class="text-sm text-slate-600 leading-relaxed flex-1">{plan.descripcion}</p>
             <a
-              href={p.afiliacion.linkAfiliado}
+              href={ctaUrl}
               target="_blank"
-              rel="sponsored nofollow"
+              rel={isAffiliate ? "sponsored nofollow" : "nofollow"}
               class={`text-center text-sm font-semibold py-2.5 rounded-xl transition-colors ${i === 1 ? "bg-primary text-white hover:bg-[--color-primary-dark]" : "bg-slate-100 text-slate-700 hover:bg-slate-200"}`}
             >
               Empezar con {plan.nombre}
@@ -505,9 +508,9 @@ const jsonLd = {
             {p.resumenCorto}
           </p>
           <a
-            href={p.afiliacion.linkAfiliado}
+            href={ctaUrl}
             target="_blank"
-            rel="sponsored nofollow"
+            rel={isAffiliate ? "sponsored nofollow" : "nofollow"}
             class="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary font-semibold rounded-xl hover:bg-blue-50 transition-colors shadow-lg text-base"
           >
             Probar {p.nombre} {p.precios.pruebaGratisDias} días gratis
@@ -515,7 +518,7 @@ const jsonLd = {
               <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
             </svg>
           </a>
-          {p.afiliacion.tienePrograma && (
+          {isAffiliate && p.afiliacion.tienePrograma && (
             <p class="text-blue-300 text-xs mt-4">Enlace de afiliado — sin coste adicional para ti</p>
           )}
         </div>

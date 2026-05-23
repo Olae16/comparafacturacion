@@ -41,6 +41,12 @@ function sym(moneda: string) { return moneda === "USD" ? "$" : "€"; }
 function precioLabel(p: typeof pA) {
   return p.precios.desde === 0 ? "Gratis" : `${p.precios.desde}${sym(p.precios.moneda)}/mes`;
 }
+function ctaUrl(prod: typeof pA) {
+  return prod.afiliacion.linkAfiliado.startsWith("http") ? prod.afiliacion.linkAfiliado : prod.web;
+}
+function isAffiliate(prod: typeof pA) {
+  return prod.afiliacion.linkAfiliado.startsWith("http");
+}
 
 // ── Filas de la tabla comparativa ───────────────────────────────────────────
 const filasCaracteristicas = [
@@ -331,9 +337,9 @@ const jsonLd = {
               <p class="text-sm text-slate-500">{p.precios.pruebaGratisDias} días gratis · Sin tarjeta</p>
             </div>
             <a
-              href={p.afiliacion.linkAfiliado}
+              href={ctaUrl(p)}
               target="_blank"
-              rel="sponsored nofollow"
+              rel={isAffiliate(p) ? "sponsored nofollow" : "nofollow"}
               class="inline-flex items-center justify-center gap-2 px-5 py-3 bg-secondary text-white font-semibold rounded-xl hover:bg-[--color-secondary-dark] transition-colors text-sm"
             >
               Probar {p.nombre} gratis
@@ -344,7 +350,7 @@ const jsonLd = {
             <a href={`/programa/${p.slug}`} class="text-xs text-center text-slate-400 hover:text-primary transition-colors">
               Leer reseña completa de {p.nombre} →
             </a>
-            {p.afiliacion.tienePrograma && (
+            {isAffiliate(p) && p.afiliacion.tienePrograma && (
               <p class="text-xs text-center text-slate-400">Enlace de afiliado · sin coste adicional para ti</p>
             )}
           </div>
